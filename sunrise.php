@@ -1,9 +1,7 @@
 <?php
 /*************************
- * Version of sunrise.php intended to allow for nested sub-directory 
- * WordPress sites on a single Multisite install already setup for 
- * sub-directories.  Additional rules must be added to the root.
- * htaccess file.  Based on 
+ * Version of sunrise.php intended to allow for nested sub-directory WordPress sites on a single Multisite install already setup for sub-directories.  Additional rules must be added to the root .htaccess file.  
+ * Based on: 
  * http://www.paulund.co.uk/wordpress-multisite-nested-paths 
  **************************/
 if( defined( 'DOMAIN_CURRENT_SITE' ) && defined( 'PATH_CURRENT_SITE' ) ) {
