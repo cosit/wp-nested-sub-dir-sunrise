@@ -1,37 +1,50 @@
 <?php
 /*************************
- * Version of sunrise.php intended to allow for nested sub-directory WordPress sites on a single Multisite install already setup for sub-directories.  Additional rules must be added to the root .htaccess file.  
+ * Version of sunrise.php intended to allow for nested sub-directory WordPress sites on a single Multisite install already setup for sub-directories.  Works with multiple networks. Additional rules must be added to the root .htaccess file.  
  * Based on: 
  * http://www.paulund.co.uk/wordpress-multisite-nested-paths 
  **************************/
 if( defined( 'DOMAIN_CURRENT_SITE' ) && defined( 'PATH_CURRENT_SITE' ) ) {
-    $current_site = new StdClass;
-    $current_site->id = (defined( 'SITE_ID_CURRENT_SITE' ) ? constant('SITE_ID_CURRENT_SITE') : 1);
-    $current_site->domain = $domain = DOMAIN_CURRENT_SITE;
-    $current_site->path  = $path = PATH_CURRENT_SITE;
 
-    if( defined( 'BLOGID_CURRENT_SITE' ) )
-        $current_site->blog_id = BLOGID_CURRENT_SITE;
- 
-    $url = parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH );
- 
+    // Gets path of the url
+    $url = parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH );    
+    // Get domain for site comparison
+    $dm_domain = preg_replace( '|^www\.|', '', $_SERVER[ 'HTTP_HOST' ]);
+    // Defined in wp-config.php, '/'
+    $path = PATH_CURRENT_SITE;
+    // Strips out www and creates sanitized query for use in setting current_site later
+    if( ( $nowww = preg_replace( '|^www\.|', '', $dm_domain ) ) != $dm_domain )
+        $where = $wpdb->prepare( 'domain IN (%s,%s)', $dm_domain, $nowww );
+    else
+        $where = $wpdb->prepare( 'domain = %s', $dm_domain );  
+
+    // Set current_site
+    $current_site = $wpdb->get_row( "SELECT * from {$wpdb->site} WHERE $where LIMIT 0,1" );
+    //$current_site->path = $url;
+
+    // Explode and loop through each directory/sub-directory in the URL to find the correct site
     $patharray = (array) explode( '/', trim( $url, '/' ));
     $blogsearch = '';
-
+    $pathsearch = '';
+    // Loop through and create sanitized queries based on the sub-directories found
     if( count( $patharray )){
         foreach( $patharray as $pathpart ){
             $pathsearch .= '/'. $pathpart;
-            $blogsearch .= $wpdb->prepare(" OR (domain = %s AND path = %s) ", $domain, $pathsearch .'/' );
+            $blogsearch .= $wpdb->prepare(" OR (domain = %s AND path = %s) ", $dm_domain, $pathsearch .'/' );
         }
     }
- 
-    $current_blog = $wpdb->get_row( $wpdb->prepare("SELECT *, LENGTH( path ) as pathlen FROM $wpdb->blogs WHERE domain = %s AND path = '/'", $domain, $path) . $blogsearch .'ORDER BY pathlen DESC LIMIT 1');
- 
+    /* Set current_blog based on domain and sub-directories found.
+       It orders by pathlen so it doesn't just return the first sub-directory in case it's a sub sub directory.  I.e. /test2/test3 */
+    $current_blog = $wpdb->get_row( $wpdb->prepare("SELECT *, LENGTH( path ) as pathlen FROM $wpdb->blogs WHERE domain = %s AND path = '/'", $dm_domain, $path) . $blogsearch .'ORDER BY pathlen DESC LIMIT 1');
+
+    // Set variables used in WP front/backend
     $blog_id = $current_blog->blog_id;
     $public  = $current_blog->public;
     $site_id = $current_blog->site_id;
 
+    // Update current_site with the root site's site name
     $current_site = pu_get_current_site_name( $current_site );
+
 }
 
 function pu_get_current_site_name( $current_site ) {
