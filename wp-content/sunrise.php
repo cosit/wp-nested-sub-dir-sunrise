@@ -3,6 +3,13 @@
  * Version of sunrise.php intended to allow for nested sub-directory WordPress sites on a single Multisite install already setup for sub-directories.  Works with multiple networks. Additional rules must be added to the root .htaccess file.  
  * Based on: 
  * http://www.paulund.co.uk/wordpress-multisite-nested-paths 
+ * Works with the following Network Plugins:
+ * Networks for WordPress (1.1.6)
+   https://wordpress.org/plugins/networks-for-wordpress/)
+ * Multi Network Setup (1.0.0)
+   https://wordpress.org/plugins/multi-networks-setup/
+ * WP Multi Network (1.7.0) ~ Caution: This version of the plugin currently has an error where moving a site from one network to another will cause all the sites in the destination network, except the new network's root site, to be orphaned and not accessible from WordPress.
+   https://wordpress.org/plugins/wp-multi-network/
  **************************/
 if( defined( 'DOMAIN_CURRENT_SITE' ) && defined( 'PATH_CURRENT_SITE' ) ) {
 
