@@ -1,3 +1,19 @@
+# Security: prevent author enumeration
+RewriteCond %{REQUEST_URI}  ^/$
+RewriteCond %{QUERY_STRING} author=.*
+RewriteRule ^(.*)$ /? [L,R=301]
+
+# Disable XML-RPC 
+<files xmlrpc.php>
+	<IfModule mod_authz_core.c>
+		Require all denied
+	</IfModule>
+	<IfModule !mod_authz_core.c>
+		Order allow,deny
+		Deny from all
+	</IfModule>
+</files>
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
