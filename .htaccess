@@ -14,6 +14,9 @@ RewriteRule ^(.*)$ /? [L,R=301]
 	</IfModule>
 </files>
 
+# Disable Directory Browsing
+Options -Indexes
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
