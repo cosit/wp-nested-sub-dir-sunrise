@@ -3,6 +3,9 @@ RewriteCond %{REQUEST_URI}  ^/$
 RewriteCond %{QUERY_STRING} author=.*
 RewriteRule ^(.*)$ /? [L,R=301]
 
+# Custom Site Redirect
+Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
+
 # Disable XML-RPC 
 <files xmlrpc.php>
 	<IfModule mod_authz_core.c>
