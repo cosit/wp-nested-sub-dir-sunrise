@@ -4,7 +4,15 @@ RewriteCond %{QUERY_STRING} author=.*
 RewriteRule ^(.*)$ /? [L,R=301]
 
 # Custom Site Redirect
-Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
+# Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
+
+# Force SSL Site List
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+## COSIT
+RewriteRule ^(it/.*)$ https://sciences.ucf.edu/$1 [R=301,L]
+</IfModule>
 
 # Disable XML-RPC 
 <files xmlrpc.php>
