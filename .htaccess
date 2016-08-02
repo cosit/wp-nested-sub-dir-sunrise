@@ -4,11 +4,11 @@ RewriteCond %{QUERY_STRING} author=.*
 RewriteRule ^(.*)$ /? [L,R=301]
 
 # Custom Site Redirect
-# Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
+Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
 
 # force HTTPS
-RewriteCond %{HTTPS} =off
-RewriteRule ^(it) https://sciences.ucf.edu%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTPS} != on
+RewriteRule ^(it) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Disable XML-RPC 
 <files xmlrpc.php>
