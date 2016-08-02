@@ -3,12 +3,15 @@ RewriteCond %{REQUEST_URI}  ^/$
 RewriteCond %{QUERY_STRING} author=.*
 RewriteRule ^(.*)$ /? [L,R=301]
 
-<<<<<<< HEAD
 # Custom Site Redirect
 # Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
 
-=======
->>>>>>> parent of 5866f2e... New Temp Redirect
+# redirect for http /buy page
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{SERVER_PORT} =80
+RewriteRule ^buy/?$ https://sciences.ucf.edu/buy [R=301,QSA,L,NE]
+
 # Disable XML-RPC 
 <files xmlrpc.php>
 	<IfModule mod_authz_core.c>
