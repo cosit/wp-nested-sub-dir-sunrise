@@ -6,12 +6,15 @@ RewriteRule ^(.*)$ /? [L,R=301]
 # Custom Site Redirect
 # Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
 
+<<<<<<< HEAD
 # redirect for http /buy page
 Options +FollowSymLinks
 RewriteEngine on
 RewriteCond %{SERVER_PORT} =80
 RewriteRule ^buy/?$ https://sciences.ucf.edu/buy [R=301,QSA,L,NE]
 
+=======
+>>>>>>> origin/master
 # Disable XML-RPC 
 <files xmlrpc.php>
 	<IfModule mod_authz_core.c>
