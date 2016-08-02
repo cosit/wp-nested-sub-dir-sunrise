@@ -8,7 +8,7 @@ Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
 
 # Force SSL on IT Site
 RewriteCond %{REQUEST_URI} ^/it
-RewriteCond %{HTTPS} !=on
+RewriteCond %{ENV:_SERVER[HTTP_X_FORWARDED_PROTO]} != https
 RewriteRule ^(.*)$ https://coscmsqa.smca.ucf.edu/$1 [R=301,L]
 
 # Disable XML-RPC 
