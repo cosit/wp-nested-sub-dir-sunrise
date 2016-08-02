@@ -6,6 +6,11 @@ RewriteRule ^(.*)$ /? [L,R=301]
 # Custom Site Redirect
 Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
 
+# Force SSL on IT Site
+RewriteCond %{HTTP_HOST} ^sciences\.ucf\.edu
+RewriteCond %{SERVER_PORT} !443
+RewriteRule ^it/(.*)$ https://sciences.ucf.edu/it/$1 [R,L]
+
 # Disable XML-RPC 
 <files xmlrpc.php>
 	<IfModule mod_authz_core.c>
