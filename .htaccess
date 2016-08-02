@@ -10,7 +10,7 @@ Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
 RewriteCond %{HTTP_HOST} ^sciences\.ucf\.edu
 RewriteCond %{REQUEST_URI} ^/it
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://coscmsqa.smca.ucf.edu/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/$1 [R=301,L]
 
 # Disable XML-RPC 
 <files xmlrpc.php>
