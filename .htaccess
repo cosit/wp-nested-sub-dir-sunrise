@@ -13,15 +13,15 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://sciences.ucf.edu/$1 [R=301,L]
 
 # Disable XML-RPC 
-#<files xmlrpc.php>
-#	<IfModule mod_authz_core.c>
-#		Require all denied
-#	</IfModule>
-#	<IfModule !mod_authz_core.c>
-#		Order allow,deny
-#		Deny from all
-#	</IfModule>
-#</files>
+<files xmlrpc.php>
+	<IfModule mod_authz_core.c>
+		Require all denied
+	</IfModule>
+	<IfModule !mod_authz_core.c>
+		Order allow,deny
+		Deny from all
+	</IfModule>
+</files>
 
 # Disable Directory Browsing
 Options -Indexes
