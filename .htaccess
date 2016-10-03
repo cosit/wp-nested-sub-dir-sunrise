@@ -7,7 +7,7 @@ RewriteRule ^(.*)$ /? [L,R=301]
 Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
 
 # UCF Restores
-RewriteCond %{REQUEST_URI} /restores.*$ 	[NC]
+RewriteCond %{REQUEST_URI} /restores$ 	[NC]
 RewriteRule ^(.*)$ http://psychology.cos.ucf.edu/ucf-restores/$1 [R=302,L]
 
 # Redirect Old Department Domains
