@@ -10,25 +10,35 @@ Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
 Redirect 302 /restores http://psychology.cos.ucf.edu/ucf-restores/
 Redirect 302 /RESTORES http://psychology.cos.ucf.edu/ucf-restores/
 
+###################################
 # Redirect Old Department Domains
 # Anthropology
 RewriteCond %{HTTP_HOST} ^anthropology\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/anthropology/$1 [R=301,L]
+
 # Chemistry
 RewriteCond %{HTTP_HOST} ^chemistry\.cos\.ucf\.edu$ [NC]
 RewriteCond %{REQUEST_URI} !^/nmr/Schedule/Web.*$
 RewriteCond %{REQUEST_URI} !^/nmr/Schedule/Web/.*$
 RewriteRule ^(.*)$ http://sciences.ucf.edu/chemistry/$1 [R=301,L]
+
 # Political Science
 RewriteCond %{HTTP_HOST} ^politicalscience\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/politicalscience/$1 [R=301,L]
+
+# Psychology
+RewriteCond %{HTTP_HOST} ^psychology\.cos\.ucf\.edu
+RewriteCond %{REQUEST_URI} ^/snap
+RewriteRule ^(.*) http://computationalpsychology.org/ [L,R=301] 
+
 # Sociology
 RewriteCond %{HTTP_HOST} ^sociology\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/sociology/$1 [R=301,L]
+
 # Statistics
 RewriteCond %{HTTP_HOST} ^statistics\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/statistics/$1 [R=301,L]
-
+###################################
 
 # Force SSL on IT Site
 RewriteCond %{HTTP_HOST} ^sciences\.ucf\.edu

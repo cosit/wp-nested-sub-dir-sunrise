@@ -56,6 +56,10 @@ if( defined( 'DOMAIN_CURRENT_SITE' ) && defined( 'PATH_CURRENT_SITE' ) ) {
 
 function pu_get_current_site_name( $current_site ) {
     global $wpdb;
+
+    if (!isset($current_site))
+        $current_site = new stdClass();
+
     $current_site->site_name = wp_cache_get( $current_site->id . ':current_site_name', "site-options" );
     if ( !$current_site->site_name ) {
         $current_site->site_name = $wpdb->get_var( $wpdb->prepare( "SELECT meta_value FROM $wpdb->sitemeta WHERE site_id = %d AND meta_key = 'site_name'", $current_site->id ) );
