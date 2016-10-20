@@ -16,11 +16,27 @@ Redirect 302 /RESTORES http://psychology.cos.ucf.edu/ucf-restores/
 RewriteCond %{HTTP_HOST} ^anthropology\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/anthropology/$1 [R=301,L]
 
+# Biology
+RewriteCond %{HTTP_HOST} ^biology\.cos\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/$1 [R=301,L]
+
 # Chemistry
 RewriteCond %{HTTP_HOST} ^chemistry\.cos\.ucf\.edu$ [NC]
 RewriteCond %{REQUEST_URI} !^/nmr/Schedule/Web.*$
 RewriteCond %{REQUEST_URI} !^/nmr/Schedule/Web/.*$
 RewriteRule ^(.*)$ http://sciences.ucf.edu/chemistry/$1 [R=301,L]
+
+# Communication
+RewriteCond %{HTTP_HOST} ^communication\.cos\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ http://sciences.ucf.edu/communication/$1 [R=301,L]
+
+# Math
+RewriteCond %{HTTP_HOST} ^math\.cos\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ http://sciences.ucf.edu/math/$1 [R=301,L]
+
+# Physics
+RewriteCond %{HTTP_HOST} ^physics\.cos\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ http://sciences.ucf.edu/physics/$1 [R=301,L]
 
 # Political Science
 RewriteCond %{HTTP_HOST} ^politicalscience\.cos\.ucf\.edu$ [NC]
@@ -30,6 +46,17 @@ RewriteRule ^(.*)$ http://sciences.ucf.edu/politicalscience/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^psychology\.cos\.ucf\.edu
 RewriteCond %{REQUEST_URI} ^/snap
 RewriteRule ^(.*) http://computationalpsychology.org/ [L,R=301] 
+
+RewriteCond %{HTTP_HOST} ^psychology\.cos\.ucf\.edu
+RewriteCond %{REQUEST_URI} ^/bendsawyer
+RewriteRule ^(.*) http://bendsawyer.com/ [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^psychology\.cos\.ucf\.edu
+RewriteCond %{REQUEST_URI} ^/bohil
+RewriteRule ^(.*) https://sites.google.com/site/categorizationdecisionlab/ [L,R=301] 
+
+RewriteCond %{HTTP_HOST} ^psychology\.cos\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ http://sciences.ucf.edu/psychology/$1 [R=301,L]
 
 # Sociology
 RewriteCond %{HTTP_HOST} ^sociology\.cos\.ucf\.edu$ [NC]
