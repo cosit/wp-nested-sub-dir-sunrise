@@ -79,6 +79,11 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://sciences.ucf.edu/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^sciences\.ucf\.edu
+RewriteCond %{REQUEST_URI} ^/biology/sotero
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://sciences.ucf.edu/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^sciences\.ucf\.edu
 RewriteCond %{REQUEST_URI} ^/psychology/spiop
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://sciences.ucf.edu/$1 [R=301,L]
