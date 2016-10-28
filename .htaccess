@@ -3,9 +3,6 @@ RewriteCond %{REQUEST_URI}  ^/$
 RewriteCond %{QUERY_STRING} author=.*
 RewriteRule ^(.*)$ /? [L,R=301]
 
-# Custom Site Redirect
-Redirect 302 /physics/hsaha http://physics.cos.ucf.edu/hsaha
-
 # UCF Restores
 Redirect 302 /restores http://psychology.cos.ucf.edu/ucf-restores/
 Redirect 302 /RESTORES http://psychology.cos.ucf.edu/ucf-restores/
