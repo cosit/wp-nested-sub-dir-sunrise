@@ -64,6 +64,13 @@ RewriteCond %{HTTP_HOST} ^statistics\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/statistics/$1 [R=301,L]
 ###################################
 
+###################################
+# Redirect Other Domains
+# High School Science
+RewriteCond %{HTTP_HOST} ^highschoolscience\.cos\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ http://highschoolscience.ucf.edu/$1 [R=301,L]
+###################################
+
 # Force SSL on Sites
 RewriteCond %{HTTP_HOST} ^sciences\.ucf\.edu
 RewriteCond %{REQUEST_URI} ^/it
