@@ -48,7 +48,7 @@ RewriteCond %{HTTP_HOST} ^microgravity\.physics\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/physics/microgravity/$1 [L,R=301] 
 
 RewriteCond %{HTTP_HOST} ^microgravity\.physics\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://physics.cos.ucf.edu/microgravity/$1 [L,R=301] 
+RewriteRule ^(.*)$ http://sciences.ucf.edu/physics/microgravity/$1 [L,R=301] 
 
 # Political Science
 RewriteCond %{HTTP_HOST} ^politicalscience\.cos\.ucf\.edu$ [NC]
