@@ -74,6 +74,8 @@ RewriteRule ^(.*)$ http://sciences.ucf.edu/math/mall/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^mikusinski\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/math/mikusinski/$1 [R=301,L]
 
+RewriteRule ^math/~mathlab$ http://sciences.ucf.edu/math/mathlab$1 [R=301,L]
+
 # Physics
 RewriteCond %{HTTP_HOST} ^physics\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/physics/$1 [R=301,L]
