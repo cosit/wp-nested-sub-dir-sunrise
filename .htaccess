@@ -4,10 +4,11 @@ RewriteCond %{QUERY_STRING} author=.*
 RewriteRule ^(.*)$ /? [L,R=301]
 
 # UCF Restores
-Redirect 302 /restores http://psychology.cos.ucf.edu/ucf-restores/
-Redirect 302 /RESTORES http://psychology.cos.ucf.edu/ucf-restores/
+Redirect 302 /restores http://sciences.ucf.edu/psychology/ucf-restores/
+Redirect 302 /RESTORES http://sciences.ucf.edu/psychology/ucf-restores/
 # Promes
 Redirect 301 /psychology/promes http://www.promes-icc.com/
+Redirect 301 /psychology/awmlab /psychology/amlab
 
 ###################################
 # Redirect Old Department Domains
