@@ -9,6 +9,9 @@ Redirect 302 /RESTORES http://sciences.ucf.edu/psychology/ucf-restores/
 # Promes
 Redirect 301 /psychology/promes http://www.promes-icc.com/
 Redirect 301 /psychology/awmlab /psychology/amlab
+# Pascencio & jenkins
+Redirect 301 /biology/jenkins /biology/d4lab
+Redirect 301 /biology/pascencio /biology/d4lab
 
 ###################################
 # Redirect Old Department Domains
@@ -36,13 +39,16 @@ RewriteCond %{HTTP_HOST} ^games\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/games/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^jenkins\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/jenkins/$1 [R=301,L]
+RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/d4lab/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^king\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/king/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^noss\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/noss/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^pascencio\.cos\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/d4lab/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^parkinson\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/parkinson/$1 [R=301,L]
