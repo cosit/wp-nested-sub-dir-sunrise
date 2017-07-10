@@ -7,7 +7,7 @@ RewriteRule ^(.*)$ /? [L,R=301]
 Redirect 302 /restores http://sciences.ucf.edu/psychology/ucf-restores/
 Redirect 302 /RESTORES http://sciences.ucf.edu/psychology/ucf-restores/
 # Promes
-#Redirect 301 /psychology/promes http://www.promes-icc.com/
+Redirect 301 /psychology/promes http://www.promes-icc.com/
 Redirect 301 /psychology/awmlab /psychology/amlab
 # Pascencio & jenkins
 Redirect 301 /biology/jenkins /biology/d4lab
