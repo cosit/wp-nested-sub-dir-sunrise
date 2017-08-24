@@ -57,7 +57,10 @@ RewriteCond %{HTTP_HOST} ^vonkalm\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/vonkalm/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^worthy\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/worthy/$1 [R=301,L]
+RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/worthy/PEBL [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^understandingchildren\.cos\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ http://sciences.ucf.edu/psychology/understandingchildren/$1 [R=301,L]
 
 
 # Chemistry
