@@ -62,7 +62,6 @@ RewriteRule ^(.*)$ http://sciences.ucf.edu/biology/worthy/PEBL [R=301,L]
 RewriteCond %{HTTP_HOST} ^understandingchildren\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://sciences.ucf.edu/psychology/understandingchildren/$1 [R=301,L]
 
-
 # Chemistry
 RewriteCond %{HTTP_HOST} ^chemistry\.cos\.ucf\.edu$ [NC]
 RewriteCond %{REQUEST_URI} !^/nmr/Schedule/Web.*$
