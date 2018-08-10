@@ -3,6 +3,11 @@ RewriteCond %{REQUEST_URI}  ^/$
 RewriteCond %{QUERY_STRING} author=.*
 RewriteRule ^(.*)$ /? [L,R=301]
 
+###################################
+# Redirect Old COS Domain
+RewriteCond %{HTTP_HOST} ^www\.cos\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/$1 [R=301,L]
+
 # UCF Restores
 Redirect 302 /restores http://sciences.ucf.edu/psychology/ucf-restores/
 Redirect 302 /RESTORES http://sciences.ucf.edu/psychology/ucf-restores/
