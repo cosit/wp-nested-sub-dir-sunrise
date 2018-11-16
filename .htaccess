@@ -81,6 +81,9 @@ RewriteCond %{HTTP_HOST} ^tv\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://sciences.ucf.edu/communication/tv/$1 [R=301,L]
 
 # Math
+RewriteCond %{HTTP_HOST} ^math\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/math/$1 [R=301,L]
+
 RewriteCond %{HTTP_HOST} ^math\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://sciences.ucf.edu/math/$1 [R=301,L]
 
