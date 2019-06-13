@@ -9,8 +9,8 @@ RewriteCond %{HTTP_HOST} ^www\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://sciences.ucf.edu/$1 [R=301,L]
 
 # UCF Restores
-Redirect 302 /restores http://sciences.ucf.edu/psychology/ucf-restores/
-Redirect 302 /RESTORES http://sciences.ucf.edu/psychology/ucf-restores/
+Redirect 302 /restores https://sciences.ucf.edu/psychology/ucf-restores/
+Redirect 302 /RESTORES https://sciences.ucf.edu/psychology/ucf-restores/
 # Promes
 Redirect 301 /psychology/promes http://www.promes-icc.com/
 Redirect 301 /psychology/awmlab /psychology/amlab
@@ -80,6 +80,10 @@ RewriteRule ^(.*)$ https://sciences.ucf.edu/communication/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^tv\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://sciences.ucf.edu/communication/tv/$1 [R=301,L]
 
+# Old WNSC Site (Communication)
+RewriteCond %{HTTP_HOST} ^wnsc\.ucf\.edu$ [NC]
+RewriteRule ^(.*)$ https://communication.ucf.edu/$1 [R=301,L]
+
 # Math
 RewriteCond %{HTTP_HOST} ^math\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://sciences.ucf.edu/math/$1 [R=301,L]
@@ -96,24 +100,24 @@ RewriteRule ^(.*)$ https://sciences.ucf.edu/math/mall/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^mikusinski\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://sciences.ucf.edu/math/mikusinski/$1 [R=301,L]
 
-RewriteRule ^math/~mathlab(.*)$ http://sciences.ucf.edu/math/mathlab$1 [R=301,NC,L]
+RewriteRule ^math/~mathlab(.*)$ https://sciences.ucf.edu/math/mathlab$1 [R=301,NC,L]
 
 # Physics
 RewriteCond %{HTTP_HOST} ^physics\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://sciences.ucf.edu/physics/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^kara\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/physics/kara/$1 [L,R=301] 
+RewriteRule ^(.*)$ https://sciences.ucf.edu/physics/kara/$1 [L,R=301] 
 
 RewriteCond %{HTTP_HOST} ^microgravity\.physics\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/physics/microgravity/$1 [L,R=301] 
+RewriteRule ^(.*)$ https://sciences.ucf.edu/physics/microgravity/$1 [L,R=301] 
 
 RewriteCond %{HTTP_HOST} ^microgravity\.physics\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/physics/microgravity/$1 [L,R=301] 
+RewriteRule ^(.*)$ https://sciences.ucf.edu/physics/microgravity/$1 [L,R=301] 
 
 # Political Science
 RewriteCond %{HTTP_HOST} ^politicalscience\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/politicalscience/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/politics/$1 [R=301,L]
 
 # Psychology
 RewriteCond %{HTTP_HOST} ^psychology\.cos\.ucf\.edu
@@ -129,26 +133,26 @@ RewriteCond %{REQUEST_URI} ^/bohil
 RewriteRule ^(.*) https://sites.google.com/site/categorizationdecisionlab/ [L,R=301] 
 
 RewriteCond %{HTTP_HOST} ^mmlab\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/psychology/mmlab/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/psychology/mmlab/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^vonholle\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/psychology/mmlab/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/psychology/mmlab/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^psychology\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/psychology/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/psychology/$1 [R=301,L]
 
 # Sociology
 RewriteCond %{HTTP_HOST} ^sociology\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/sociology/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/sociology/$1 [R=301,L]
 
 # Statistics
 RewriteCond %{HTTP_HOST} ^statistics\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/statistics/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/statistics/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^dms\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/statistics/dms/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/statistics/dms/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^dms\.stat\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/statistics/dms/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/statistics/dms/$1 [R=301,L]
 ###################################
 
 ###################################
@@ -161,7 +165,7 @@ RewriteCond %{HTTP_HOST} ^mit\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://mit.ucf.edu/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^news\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ http://sciences.ucf.edu/news/$1 [R=301,L]
+RewriteRule ^(.*)$ https://sciences.ucf.edu/news/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^peterhancock\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://peterhancock.ucf.edu/$1 [R=301,L]
