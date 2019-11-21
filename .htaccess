@@ -73,9 +73,9 @@ RewriteCond %{REQUEST_URI} !^/nmr/Schedule/Web.*$
 RewriteCond %{REQUEST_URI} !^/nmr/Schedule/Web/.*$
 RewriteRule ^(.*)$ https://sciences.ucf.edu/chemistry/$1 [R=301,L]
 
-# Communication
+# NSCM
 RewriteCond %{HTTP_HOST} ^communication\.cos\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ https://sciences.ucf.edu/communication/$1 [R=301,L]
+RewriteRule ^(.*)$ https://communication.ucf.edu/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^tv\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://sciences.ucf.edu/communication/tv/$1 [R=301,L]
@@ -157,7 +157,6 @@ RewriteRule ^(.*)$ https://sciences.ucf.edu/statistics/dms/$1 [R=301,L]
 
 ###################################
 # Redirect Other Domains
-# High School Science
 RewriteCond %{HTTP_HOST} ^highschoolscience\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://highschoolscience.ucf.edu/$1 [R=301,L]
 
@@ -170,8 +169,8 @@ RewriteRule ^(.*)$ https://sciences.ucf.edu/news/$1 [R=301,L]
 RewriteCond %{HTTP_HOST} ^peterhancock\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://peterhancock.ucf.edu/$1 [R=301,L]
 
-RewriteCond %{HTTP_HOST} ^coastal\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ https://sciences.ucf.edu/coastal-center/$1 [R=301,L]
+#RewriteCond %{HTTP_HOST} ^coastal\.ucf\.edu$ [NC]
+#RewriteRule ^(.*)$ https://sciences.ucf.edu/coastal-center/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^www\.coastal\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ https://sciences.ucf.edu/coastal-center/$1 [R=301,L]
