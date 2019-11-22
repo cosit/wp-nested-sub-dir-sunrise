@@ -168,12 +168,6 @@ RewriteRule ^(.*)$ https://sciences.ucf.edu/news/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^peterhancock\.cos\.ucf\.edu$ [NC]
 RewriteRule ^(.*)$ http://peterhancock.ucf.edu/$1 [R=301,L]
-
-#RewriteCond %{HTTP_HOST} ^coastal\.ucf\.edu$ [NC]
-#RewriteRule ^(.*)$ https://sciences.ucf.edu/coastal-center/$1 [R=301,L]
-
-RewriteCond %{HTTP_HOST} ^www\.coastal\.ucf\.edu$ [NC]
-RewriteRule ^(.*)$ https://sciences.ucf.edu/coastal-center/$1 [R=301,L]
 ###################################
 
 # Force SSL on Sites
